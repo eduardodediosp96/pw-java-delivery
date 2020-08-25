@@ -1,5 +1,7 @@
 package pe.edu.upc.delivery.models.entities;
 
+import java.util.List;
+
 public class Producto {
 	private Integer id;
 	private String descripcion;
@@ -7,6 +9,8 @@ public class Producto {
 	private Float precioCompra;
 	private Float precioVenta;
 	private String marca;
-	private Proveedor proveedor;
 	private Categoria categoria;
+	
+	private List<Proveedor> proveedores;
+	private List<DetallePedido> detallePedidos;
 }

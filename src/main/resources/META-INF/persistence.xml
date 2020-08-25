@@ -3,6 +3,7 @@
 	
 	<persistence-unit name="DeliveryPU" transaction-type="JTA">
 		<jta-data-source>java:/DeliveryDS</jta-data-source>
+		<class>pe.edu.upc.delivery.models.entities.Distrito</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property
