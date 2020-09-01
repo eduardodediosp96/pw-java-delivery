@@ -5,6 +5,11 @@
 		<jta-data-source>java:/DeliveryDS</jta-data-source>
 		<class>pe.edu.upc.delivery.models.entities.Distrito</class>
 		<class>pe.edu.upc.delivery.models.entities.Cliente</class>
+		<class>pe.edu.upc.delivery.models.entities.Proveedor</class>
+		<class>pe.edu.upc.delivery.models.entities.Pedido</class>
+		<class>pe.edu.upc.delivery.models.entities.Producto</class>
+		<class>pe.edu.upc.delivery.models.entities.DetallePedido</class>
+		<class>pe.edu.upc.delivery.models.entities.Categoria</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property
