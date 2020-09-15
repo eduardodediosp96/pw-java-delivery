@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      	xmlns:f="http://xmlns.jcp.org/jsf/core"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+    	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Delivery - Clientes</title>
+</h:head>
+<h:body>
+    <h2>Lista Clientes</h2>
+    
+    <p:dataTable var="cliente" value="#{clienteView.clientes}">
+	    <p:column headerText="Id">
+	        <h:outputText value="#{cliente.id}" />
+	    </p:column>	 
+	    <p:column headerText="Apellidos">
+	        <h:outputText value="#{cliente.apellidos}" />
+	    </p:column>
+	    <p:column headerText="Nombres">
+	        <h:outputText value="#{cliente.nombres}" />
+	    </p:column>
+	    <p:column headerText="Dirección">
+	        <h:outputText value="#{cliente.direccion}" />
+	    </p:column>
+	    <p:column headerText="Distrito">
+	        <h:outputText value="#{cliente.distrito.nombre}" />
+	    </p:column>
+	    <p:column headerText="Número de documento">
+	        <h:outputText value="#{cliente.numeroDocumento}" />
+	    </p:column>
+	    <p:column headerText="Celular">
+	        <h:outputText value="#{cliente.celular}" />
+	    </p:column>
+	    <p:column headerText="Correo">
+	        <h:outputText value="#{cliente.correo}" />
+	    </p:column>
+	    <p:column headerText="Fecha de nacimiento">
+	        <h:outputText value="#{cliente.fechaNacimiento}" />
+	    </p:column>
+	</p:dataTable>
+
+</h:body>
+</html>

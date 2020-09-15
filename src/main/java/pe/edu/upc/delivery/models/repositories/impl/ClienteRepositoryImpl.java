@@ -5,16 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import pe.edu.upc.delivery.models.entities.Categoria;
 import pe.edu.upc.delivery.models.entities.Cliente;
 import pe.edu.upc.delivery.models.repositories.ClienteRepository;
 
 @Named
+@ApplicationScoped
 public class ClienteRepositoryImpl implements ClienteRepository, Serializable{
 
 	private static final long serialVersionUID = 1L;
