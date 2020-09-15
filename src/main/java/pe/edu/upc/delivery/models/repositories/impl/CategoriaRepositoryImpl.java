@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,6 +15,7 @@ import pe.edu.upc.delivery.models.entities.Categoria;
 import pe.edu.upc.delivery.models.repositories.CategoriaRepository;
 
 @Named
+@ApplicationScoped
 public class CategoriaRepositoryImpl implements CategoriaRepository, Serializable{
 
 	private static final long serialVersionUID = 1L;

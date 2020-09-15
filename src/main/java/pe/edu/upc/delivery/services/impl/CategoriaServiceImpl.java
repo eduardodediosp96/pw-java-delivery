@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -13,6 +14,7 @@ import pe.edu.upc.delivery.models.repositories.CategoriaRepository;
 import pe.edu.upc.delivery.services.CategoriaService;
 
 @Named
+@ApplicationScoped
 public class CategoriaServiceImpl implements CategoriaService, Serializable {
 
 	private static final long serialVersionUID = 1L;
