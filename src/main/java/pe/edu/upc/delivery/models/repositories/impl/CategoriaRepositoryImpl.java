@@ -74,4 +74,14 @@ public class CategoriaRepositoryImpl implements CategoriaRepository, Serializabl
 		return categoria;
 	}
 
+	@Override
+	public List<Categoria> findByDenominacion(String denominacion) throws Exception {
+		List<Categoria> categorias = new ArrayList<Categoria>();
+		String qlString = "SELECT c FROM Categoria c WHERE c.denominacion LIKE ?1";	// JPQL
+		TypedQuery<Categoria> query = em.createQuery(qlString, Categoria.class);
+		query.setParameter(1, "%" + denominacion + "%");
+		categorias = query.getResultList();
+		return categorias;
+	}
+
 }

@@ -50,4 +50,9 @@ public class CategoriaServiceImpl implements CategoriaService, Serializable {
 		return categoriaRepostory.findById(id);
 	}
 
+	@Override
+	public List<Categoria> findByDenominacion(String denominacion) throws Exception {
+		return categoriaRepostory.findByDenominacion(denominacion);
+	}
+
 }
