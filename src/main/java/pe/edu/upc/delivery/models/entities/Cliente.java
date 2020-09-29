@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "clientes")
@@ -35,6 +36,9 @@ public class Cliente {	// UpperCammel Case
 	@ManyToOne		// 2	
 	@JoinColumn(name = "distrito_id")	// 3
 	private Distrito distrito;
+	
+	@Transient
+	private Integer distritoId;
 	
 	@Column(name = "numero_documento", length = 12, nullable = false)	// Snake
 	private String numeroDocumento;	// lowerCammel Case
@@ -134,6 +138,14 @@ public class Cliente {	// UpperCammel Case
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
+	}
+
+	public Integer getDistritoId() {
+		return distritoId;
+	}
+
+	public void setDistritoId(Integer distritoId) {
+		this.distritoId = distritoId;
 	}
 		
 }

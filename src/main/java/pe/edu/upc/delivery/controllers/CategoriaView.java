@@ -29,11 +29,15 @@ public class CategoriaView implements Serializable {
 	private Categoria categoriaSearch;
 	private Action action;
 	
+	// Disabled utilizado para activar y desactivar los botones
 	private boolean disabledNuevo;
 	private boolean disabledGrabar;
 	private boolean disabledCancelar;
 	private boolean disabledEditar;
 	private boolean disabledEliminar;	
+	// Style for Panelgrid y Datatable
+	private String stylePanelGrid;
+	private String StyleDataTable;
 
 	@Inject
 	private CategoriaService categoriaService;
@@ -161,6 +165,8 @@ public class CategoriaView implements Serializable {
     }
 	// Disabled Buttom
 	public void disabledAllButtom() {
+		this.stylePanelGrid = "none";
+		this.StyleDataTable = "block";
 		this.disabledNuevo = false;
 		this.disabledGrabar = true;
 		this.disabledCancelar = true;
@@ -168,6 +174,8 @@ public class CategoriaView implements Serializable {
 		this.disabledEliminar = true;
 	}
 	public void enabledButtomGrabar() {
+		this.stylePanelGrid = "block";
+		this.StyleDataTable = "none";
 		this.disabledNuevo = true;
 		this.disabledGrabar = false;
 		this.disabledCancelar = false;
@@ -175,6 +183,8 @@ public class CategoriaView implements Serializable {
 		this.disabledEliminar = true;
 	}
 	public void enabledButtomEditarEliminar() {
+		this.stylePanelGrid = "none";
+		this.StyleDataTable = "block";
 		this.disabledNuevo = false;
 		this.disabledGrabar = true;
 		this.disabledCancelar = true;
@@ -224,6 +234,15 @@ public class CategoriaView implements Serializable {
 	public Categoria getCategoriaSearch() {
 		return categoriaSearch;
 	}
+
+	public String getStylePanelGrid() {
+		return stylePanelGrid;
+	}
+
+	public String getStyleDataTable() {
+		return StyleDataTable;
+	}
+	
 	
 	
 }

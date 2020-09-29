@@ -68,9 +68,9 @@ public class ClienteRepositoryImpl implements ClienteRepository, Serializable{
 	@Override
 	public List<Cliente> findByApellidos(String apellidos) throws Exception {
 		List<Cliente> clientes = new ArrayList<Cliente>();
-		String qlString = "SELECT c FROM Cliente c WHERE c.apellidos LIKE '%?1%'";	// JPQL
+		String qlString = "SELECT c FROM Cliente c WHERE c.apellidos LIKE ?1";	// JPQL
 		TypedQuery<Cliente> query = em.createQuery(qlString, Cliente.class);
-		query.setParameter(1, apellidos);
+		query.setParameter(1, "%" + apellidos + "%");
 		clientes = query.getResultList();
 		return clientes;
 	}

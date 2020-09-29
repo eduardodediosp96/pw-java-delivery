@@ -14,12 +14,12 @@
     <h:form id="form-categoria">
     	<p:growl id="growl" life="2000" />
     
-		<p:panelGrid id="panel-categoria" columns="4">
+		<p:panelGrid id="panel-categoria" columns="4" style="display:#{categoriaView.stylePanelGrid}">
 			<p:outputLabel for="input-denominacion" value="Denominación: "/>
 			<p:inputText id="input-denominacion" value="#{categoriaView.categoria.denominacion}"/>		
 		</p:panelGrid>	
 		
-		<p:panelGrid id="panel-buscar" columns="4">
+		<p:panelGrid id="panel-buscar" columns="4" style="display:#{categoriaView.styleDataTable}">
 			<p:outputLabel for="input-denominacion-search" value="Denominación: "/>
 			<p:inputText id="input-denominacion-search" value="#{categoriaView.categoriaSearch.denominacion}"/>	
 			<p:commandButton value="Buscar" actionListener="#{categoriaView.searchDenominacionCategoria()}" 
@@ -29,7 +29,8 @@
 		
 	    <p:dataTable id="dt-categoria" value="#{categoriaView.categorias}" var="categoria" 
 	    		paginator="true" rows="5" paginatorPosition="bottom" 
-	    		selectionMode="single" rowKey="#{categoria.id}">
+	    		selectionMode="single" rowKey="#{categoria.id}"
+	    		style="display:#{categoriaView.styleDataTable}">
 	    		
 	    	<p:ajax event="rowSelect" listener="#{categoriaView.selectCategoria}" 
 	    		update=":form-categoria:toolbar-categoria :form-categoria:panel-categoria" />
